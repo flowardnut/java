@@ -6,33 +6,38 @@ package banner;
 
 import banner.Banner;
 import org.testng.annotations.Test;
+import static org.testng.Assert.assertTrue;
 
 /**
  *
  * @author CAD3
  */
 public class BannerTest {
+
     @Test
-    public void testPassedInChars(){
+    public void testPassedInChars() {
         Banner banner = new Banner("DAMA");
-        assert(banner.toString().equals("######     #    #     #    #    \n" +
-                                        "#     #   # #   ##   ##   # #   \n" +
-                                        "#     #  #   #  # # # #  #   #  \n" +
-                                        "#     # #     # #  #  # #     # \n" +
-                                        "#     # ####### #     # ####### \n" +
-                                        "#     # #     # #     # #     # \n" +
-                                        "######  #     # #     # #     # "));
+        String actualBanner = banner.toString();
+        String testBanner = "######     #    #     #    #    " + System.getProperty("line.separator")
+                          + "#     #   # #   ##   ##   # #   " + System.getProperty("line.separator")
+                          + "#     #  #   #  # # # #  #   #  " + System.getProperty("line.separator")
+                          + "#     # #     # #  #  # #     # " + System.getProperty("line.separator")
+                          + "#     # ####### #     # ####### " + System.getProperty("line.separator")
+                          + "#     # #     # #     # #     # " + System.getProperty("line.separator")
+                          + "######  #     # #     # #     # " + System.getProperty("line.separator");
+        assertTrue(actualBanner.equals(testBanner));
     }
 
     @Test
-    public void testDefaultChars(){
+    public void testDefaultChars() {
         Banner banner = new Banner();
-        assert(banner.toString().equals("   #    ######     #    #     # \n" +
-                                        "  # #   #     #   # #   ##   ## \n" +
-                                        " #   #  #     #  #   #  # # # # \n" +
-                                        "#     # #     # #     # #  #  # \n" +
-                                        "####### #     # ####### #     # \n" +
-                                        "#     # #     # #     # #     # \n" +
-                                        "#     # ######  #     # #     # "));
+        String testBanner = "   #    ######     #    #     # " + System.getProperty("line.separator")
+                          + "  # #   #     #   # #   ##   ## " + System.getProperty("line.separator")
+                          + " #   #  #     #  #   #  # # # # " + System.getProperty("line.separator")
+                          + "#     # #     # #     # #  #  # " + System.getProperty("line.separator")
+                          + "####### #     # ####### #     # " + System.getProperty("line.separator")
+                          + "#     # #     # #     # #     # " + System.getProperty("line.separator")
+                          + "#     # ######  #     # #     # " + System.getProperty("line.separator");
+        assertTrue(banner.toString().equals(testBanner));
     }
 }

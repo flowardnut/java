@@ -47,7 +47,7 @@ public class Banner {
             for(Shape s: shapes){
                 sb.append(s.print());                
             }
-            sb.append("\n");
+            sb.append(System.getProperty("line.separator"));
         }   
         return sb.toString();
     }
