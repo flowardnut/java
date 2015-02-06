@@ -6,5 +6,9 @@ nbdist/
 nbactions.xml
 nb-configuration.xml
 .nb-gradle/
-/BannerMVN/target/
-/Banner/target/
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
